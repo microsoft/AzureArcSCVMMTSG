@@ -16,3 +16,7 @@ Access Denied error can be seen because of multiple reason -
    - Open a powershell admin prompt from the workstation machine and run the below command to debug for any further issues
 
      **New-PSSession -ComputerName <fqdn/IP> -Authentication Negotiate -Credential 'domain\username'**
+
+2) UserName or password provided is incorrect.
+   - To validate the same run the below command 
+     **New-PSSession -ComputerName <fqdn/IP> -Authentication Negotiate -Credential 'domain\username'**
