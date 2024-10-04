@@ -14,11 +14,16 @@ Error Code Explanation with Recommendation for diagnosability
 
 For e.g
 
-**Error Code ID**
-**Description**
+**Error Code ID ** 
+
+**Description **
+
 Error message dump in CLI command failure
-**Explanation**
+
+**Explanation **
+
 Detail explanation on how to debug and possible fixes
+
 
 
 
