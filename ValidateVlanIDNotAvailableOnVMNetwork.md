@@ -11,7 +11,7 @@ Once such validate is to verify if the network configuration used for appliance 
 
 Below is how the user experience looks like once the azure resource bridge deployment is triggered from workstation mahcine and if there is no VMM IPPool configured as part of VMM Infra.
 
-![alt text](image.png)
+![alt text](image-1.png)
 
 To summarize :
 
