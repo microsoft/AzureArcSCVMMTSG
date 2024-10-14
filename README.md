@@ -1,6 +1,6 @@
 # Azure Arc enabled SCVMM Troubleshooting Guide (TSG)
 
-This document is intended to be a self-debugging guide for Azure Arc Resource Bridge (ARB) deployment failure on a SCVMM managed datecenter.
+This document is intended to be a self-debugging guide for Azure Arc Resource Bridge (ARB) deployment failure on a System Center Virtual Machine Manager (SCVMM) managed datecenter.
 
 The detailed onboarding walkthrough article can be found [here](https://learn.microsoft.com/en-us/azure/azure-arc/system-center-virtual-machine-manager/quickstart-connect-system-center-virtual-machine-manager-to-arc).
 
