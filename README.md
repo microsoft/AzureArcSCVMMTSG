@@ -13,6 +13,7 @@ Error Description as reported in command failure
 Error Code Explanation with recommendation for diagnosability
 
 
+
 For e.g.
 
 **Error Code ID** 
@@ -21,7 +22,7 @@ For e.g.
 
 Error message dump from CLI command failure
 
-**Explanation **
+**Explanation**
 
 Detailed debugging walkthrough and the possible fixes
 
