@@ -8,7 +8,7 @@
 
 During the Azure Arc resource bridge deployment (ARB) on a SCVMM managed datacenter, a remote PowerShell session creation request triggers from the workstation machine from which the deployment script is executed to the VMM server machine. The user will be prompted to provide a Fully-Qualified Domain Name (FQDN) which can be rolename/nodename or an IP address.
 
-Access denied error can be seen because of multiple reasons. Given below are some of the reasons and recommended steps to confirm the same:
+Access denied error can be encountered because of multiple reasons. Given below are some of the reasons and recommended steps to confirm the same:
 
 1) The user account (say domain\username) used to create the remote session is not an administrator in the VMM server machine. To validate this,
    - RDP into the VMM server machine.
