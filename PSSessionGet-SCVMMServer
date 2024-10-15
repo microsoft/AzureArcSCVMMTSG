@@ -1,6 +1,6 @@
 **CreateConfigKvaCustomerError**
 
-**Description**
+**Error message**
   
   failed to get new provider:  SCVMM PSSession creation failed. Please check if the specfied username and password are correct. Ensure VMM Server is running and reachable from the machine where the script is executed Kindly check if the user is an Administrator on VMM Server Machine and is part of Administrator user role in the VMM Server User Role profile.
   : Error in executing get-scvmmserver command on the pwsh console.Get-SCVMMServer: Unable to connect to the VMM management server localhost. The Virtual Machine Manager service on that server did not respond. (Error ID: 1602)
@@ -9,7 +9,7 @@
 
 **Explanation**
 
-During Appliance Resource Bridge Deployment for SCVMM there is a remote Powershell session creation request triggered from the workstation machine to the VMM Server machine. User is prompted to provide a FQDN, it can be rolename/nodename or an IP.
+During Azure Arc resource bridge (ARB) deployment on a SCVMM managed datacenter, there is a remote PowerShell session creation request triggered from the workstation machine to the VMM Server machine. User is prompted to provide a FQDN, it can be rolename/nodename or an IP.
 
 
 The above error can also be reported because of multiple reason -
