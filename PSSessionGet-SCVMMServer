@@ -11,7 +11,8 @@
 
 During Azure Arc resource bridge (ARB) deployment on a SCVMM managed datacenter, a remote PowerShell session creation request triggers from the workstation machine from which the deployment script is executed to the VMM server machine. The user will be prompted to provide a Fully-Qualified Domain Name (FQDN) which can be rolename/nodename or an IP address.
 
-The above error can also be reported because of multiple reason -
+Get-SCVMMServer failure error can be encountered because of multiple reasons -
+
 1) There is no VMM Service running as part of the specified FQDN or IP specified to connect to VMM server.
 
 For standalone VMM Setup we need to specific either the full fqdn of the vmm server machine or the IP. For HAVMM setup we can either specify the HAVMM role Name or active node FQDN or IP.
