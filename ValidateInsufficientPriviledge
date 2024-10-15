@@ -1,6 +1,6 @@
 **KVAInvalidEntityCustomerError**
 
-**Description**
+**Error message**
   
     { _errorCode_: _InvalidEntityError_, _errorResponse_: _{\n\_message\_: \_Insufficient priviledges. The specified username for appliance VM creation is not a member of SCVMM Administrator profile. Please check if the user is added as a member of Administrator User Role profile on VMM Server. \_\n}_, _errorMetadata_: { _errorCategory_: __ } }
 

@@ -18,7 +18,7 @@ For e.g.
 
 **Error Code ID** 
 
-**Description**
+**Error message**
 
 Error message dump from CLI command failure
 
