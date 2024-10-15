@@ -11,19 +11,16 @@
 
 During Azure Arc resource bridge (ARB) deployment on a SCVMM managed datacenter, a remote PowerShell session creation request triggers from the workstation machine from which the deployment script is executed to the VMM server machine. The user will be prompted to provide a Fully-Qualified Domain Name (FQDN) which can be rolename/nodename or an IP address.
 
-Get-SCVMMServer failure error can be encountered because of multiple reasons -
+Get-SCVMMServer failure error can be encountered because of multiple reasons. Given below is one of the reasons and the recommended steps to confirm the same:
 
-1) There is no VMM Service running as part of the specified FQDN or IP specified to connect to VMM server.
+1) There is no VMM Service running as part of the specified FQDN or IP address to connect to the VMM server.
 
-For standalone VMM Setup we need to specific either the full fqdn of the vmm server machine or the IP. For HAVMM setup we can either specify the HAVMM role Name or active node FQDN or IP.
-To debug this further one can RDP inside the VMM Server machine using the FQDN or IP and check it is a correct endpoint and VMM Service is running.
-
-Steps to validate if VMM Service is running -
-- RDP inside the VMM Server machine using the IP/FQDN which was specified for appliance VM deployment
-- Open the service pane to look for what all services are running (services.msc)
+For a standalone VMM setup, either the full FQDN of the VMM server machine or the IP address needs to be specified. For a highly available (HA) VMM setup, we can either specify the HAVMM role name or the active node's FQDN or IP address. To validate this, 
+- RDP inside the VMM server machine using the FQDN or the IP address which was specified for ARB VM deployment
+- Open the service pane to check the running services (services.msc)
 - Check if SCVMMService (System Service Virtual Machine Manager) is running.
 
-Once the service is up and running please run the below command from workstation machine to ensure the session creation is working fine and then proceed with the appliance VM deployment script.
+Once the service is up and running, run the below command from the workstation machine to ensure the creation of a PowerShell session and then proceed with the execution of the ARB VM deployment script.
 
      **New-PSSession -ComputerName <fqdn/IP> -Authentication Negotiate -Credential 'domain\username'** 
 
