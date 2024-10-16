@@ -1,4 +1,4 @@
-**KVAInvalidEntityCustomerError**
+**Error Code ID:** KVAInvalidEntityCustomerError
 
 **Error message**
   
