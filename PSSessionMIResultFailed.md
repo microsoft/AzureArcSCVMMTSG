@@ -13,7 +13,7 @@ MI_RESULT_FAILED can be encountered because of multiple reasons. Given below is 
 
 1) The FQDN or IP address specified to connect to the VMM server is incorrect. Ping or nslookup to the VMM Server FQDN/IP is not going through.
 
-For a standalone VMM Setup we need to specific either the full FQDN of the VMM server machine or the IP address. For a highly available (HA) VMM setup, we can either specify the HAVMM role name or the active node's FQDN or IP address. To validate this,
+For a standalone VMM setup, either the full FQDN of the VMM server machine or the IP address needs to be specified. For a highly available (HA) VMM setup, we can either specify the HAVMM role name or the active node's FQDN or IP address. To validate this,
 
 - RDP inside the VMM server machine using the FQDN or the IP address which was specified for ARB VM deployment
 - Open the service pane to check the running services (services.msc)
