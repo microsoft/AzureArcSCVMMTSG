@@ -13,11 +13,10 @@ MI_RESULT_FAILED can be encountered because of multiple reasons. Given below is 
 
 1) The FQDN or IP address specified to connect to the VMM server is incorrect. Ping or nslookup to the VMM Server FQDN/IP is not going through.
 
-For a standalone VMM Setup we need to specific either the full FQDN of the VMM server machine or the IP address. For HAVMM setup we can either specify the HAVMM role Name or active node FQDN or IP.
-To debug this further one can RDP inside the VMM Server machine using the FQDN or IP and check it is a correct endpoint and VMM Service is running.
+For a standalone VMM Setup we need to specific either the full FQDN of the VMM server machine or the IP address. For a highly available (HA) VMM setup, we can either specify the HAVMM role name or the active node's FQDN or IP address. To validate this,
 
 Steps to validate if VMM Service is running -
-- RDP inside the VMM Server machine using the IP/FQDN which was specified for appliance VM deployment
+- RDP inside the VMM Server machine using the IP/FQDN which was specified for ARB VM deployment
 - Open the service pane to look for what all services are running (services.msc)
 - Check if SCVMMService (System Service Virtual Machine Manager) is running.
 
