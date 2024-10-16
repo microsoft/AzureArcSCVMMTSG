@@ -7,7 +7,7 @@
 
 **Explanation**
 
-During Appliance Resource Bridge Deployment for SCVMM there is a remote Powershell session creation request triggered from the workstation machine to the VMM Server machine. User is prompted to provide a FQDN, it can be rolename/nodename or an IP.
+During Azure Arc resource bridge (ARB) deployment on a SCVMM managed datacenter, a remote PowerShell session creation request triggers from the workstation machine from which the deployment script is executed to the VMM server machine. The user will be prompted to provide a Fully-Qualified Domain Name (FQDN) which can be rolename/nodename or an IP address.
 
 
 MI_RESULT_FAILED because of multiple reason -
