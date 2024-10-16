@@ -18,7 +18,7 @@ Get-SCVMMServer failure error can be encountered because of multiple reasons. Gi
 For a standalone VMM setup, either the full FQDN of the VMM server machine or the IP address needs to be specified. For a highly available (HA) VMM setup, we can either specify the HAVMM role name or the active node's FQDN or IP address. To validate this, 
 - RDP inside the VMM server machine using the FQDN or the IP address which was specified for ARB VM deployment
 - Open the service pane to check the running services (services.msc)
-- Check if SCVMMService (System Service Virtual Machine Manager) is running.
+- Check if SCVMMService is running.
 
 Once the service is up and running, run the below command from the workstation machine to ensure the creation of a PowerShell session and then proceed with the execution of the ARB VM deployment script.
 
