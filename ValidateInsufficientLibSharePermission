@@ -7,8 +7,7 @@
 
 **Explanation**
 
-During Appliance Resource Bridge Deployment for SCVMM there is some validations done before the actual appliance VM deployment.
-Once such validate is to verify if the the library server specified has write permissions or not. VMM Server can only create appliance VM if the required VHDX/VHD file is present with the library share. For appliance VM deployment we need a special customized mariner VHDX and the same is downloaded during the script execution and copied to the VMM Library share. This is why user is prompted to select a library share during the initial stage of deployment and validate check if there is a write permission or not. Also we need a minimum of 10GB of free space as part of the selected library share.
+During Azure Arc resource bridge (ARB) deployment on a SCVMM managed datacenter, there are a few validations performed before the ARB VM deployment. One such validation is to validate if the the library server specified has write permissions or not. VMM Server can only create the ARB VM if the required VHDX/VHD file is present with the library share. For ARB VM deployment we need a special customized mariner VHDX and the same is downloaded during the script execution and copied to the VMM Library share. This is why user is prompted to select a library share during the initial stage of deployment and validate check if there is a write permission or not. Also we need a minimum of 10GB of free space as part of the selected library share.
 
 If the above error is seen one can validate is the write permissions are there as part of library share of not using the below steps -
 - RDP to the vmm server machine.
