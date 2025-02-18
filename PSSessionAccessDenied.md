@@ -2,7 +2,7 @@
 
 **Error message**
   
-  failed to get new provider:  SCVMM PSSession creation failed. Please check if the specfied username and password are correct. Ensure VMM Server is running and reachable from the machine where the script is executed. Kindly check if the user is an Administrator on VMM Server Machine and is part of Administrator user role in the VMM Server User Role profile.   : New-PSSession : ***** Connecting to remote server ****** failed with the following  error message : Access is denied. For more information, see the about_Remote_Troubleshooting Help topic.
+  failed to get new provider:  SCVMM PSSession creation failed. Please check if the specified username and password are correct. Ensure VMM Server is running and reachable from the machine where the script is executed. Kindly check if the user is an Administrator on VMM Server Machine and is part of Administrator user role in the VMM Server User Role profile.   : New-PSSession : ***** Connecting to remote server ****** failed with the following  error message : Access is denied. For more information, see the about_Remote_Troubleshooting Help topic.
 
 **Explanation**
 
