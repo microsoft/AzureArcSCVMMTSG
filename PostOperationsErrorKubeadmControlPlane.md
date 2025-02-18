@@ -6,7 +6,7 @@
 
 **Explanation**
 
-During the Azure Arc resource bridge deployment (ARB) on a SCVMM server, a VM is created. There is a kubernetes cluster which runs inside this VM. This error normally suggest that kubernetes control plane is not provisioned properly with the Kubernetes Cluster.
+During the Azure Arc resource bridge deployment (ARB) on a SCVMM managed datacenter, a VM is created. There is a kubernetes cluster which runs inside this VM. This error normally suggest that kubernetes control plane is not provisioned properly with the Kubernetes Cluster.
 
 This can happen due to multiple reasons. The cause and debugging steps included here are -
 
