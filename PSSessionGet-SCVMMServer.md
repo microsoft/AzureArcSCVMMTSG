@@ -2,7 +2,7 @@
 
 **Error message**
   
-  failed to get new provider:  SCVMM PSSession creation failed. Please check if the specfied username and password are correct. Ensure VMM Server is running and reachable from the machine where the script is executed Kindly check if the user is an Administrator on VMM Server Machine and is part of Administrator user role in the VMM Server User Role profile.
+  failed to get new provider:  SCVMM PSSession creation failed. Please check if the specified username and password are correct. Ensure VMM Server is running and reachable from the machine where the script is executed Kindly check if the user is an Administrator on VMM Server Machine and is part of Administrator user role in the VMM Server User Role profile.
   : Error in executing get-scvmmserver command on the pwsh console.Get-SCVMMServer: Unable to connect to the VMM management server localhost. The Virtual Machine Manager service on that server did not respond. (Error ID: 1602)
   Verify that Virtual Machine Manager has been installed on the server and that the Virtual Machine Manager service is running. Then try to connect again. If the problem persists, restart the Virtual Machine Manager service.
 
