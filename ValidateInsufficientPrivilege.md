@@ -6,31 +6,28 @@ Insufficient privileges. The specified username for appliance VM creation is not
 
 **Explanation**
 
-During the Azure Arc resource bridge deployment (ARB) on a SCVMM managed datacenter, there are a few validations done before the actual ARB VM deployment. Once such validation is to verify if the account used to perform the deployment is an administrator. The user account which does the ARB VM deployment needs to be an administrator on the Windows Server machine on which the VMM Service is running and also an administrator as part of VMM Server user profile. 
+During the Azure Arc resource bridge deployment (ARB) on a SCVMM managed datacenter, there are a few validations done before the actual ARB VM deployment. Once such validation is to verify if the account used to perform the deployment is an administrator. The user account which does the ARB VM deployment needs to be an administrator on the Windows Server machine on which the VMM Service is running and also an administrator as part of VMM Server user profile. Given below are some of the reasons and the recommended steps to confirm the root cause for the above issue:
 
-Steps to debug the same -
-- Open VMM Console -
-   Setting -> User Role -> Administrator Profile
-- Check is the username which was used is part of the administrator profile or not.
-- The same can also be part of some domain admin and the domain admin can also be added as part of the administrator profile.
+- Open VMM Console -> Settings -> User Role -> Administrator Profile
+- Check if the username which was used during onboarding script execution is part of the administrator profile. The username can also be part of some domain admin and the domain admin can be added as part of the administrator profile.
 
-Once we are good with the above validation we can run the below command from the workstation machine to check if the above reported error is still being reported or not.
+Once you are good with the above validation, you can run the below command from the workstation machine to check if the above error is still encountered:
 
-1) Open an administrator powershell prompt in the same machine from where the appliance deployment script was executed.
-2) Browse to the same folder from where the script was executed as it will have three yaml which we can use for quick validation for this error.
-   The three files present in the above path will be named as (say if the RB name was testvmmrb in the onboarding script downloaded from azure portal) -
+1) Open an administrator PowerShell prompt in the same machine from where the ARB VM deployment script was executed.
+2) Browse to the same folder from where the onboarding script was executed as it will have three .yaml files which help with quick validations. The three .yaml files present in the path will be named as (say if the ARB name was testvmmrb in the onboarding script downloaded from Azure portal) -
    testvmmrb-appliance.yaml , testvmmrb-infra.yaml, testvmmrb-resource.yaml 
    
-   Please note the filename will change based on the RB name but the extensions -appliance.yaml, -infra.yaml, -resource.yaml will be there.
+   Note the filename will change based on the ARB name but the extensions -appliance.yaml, -infra.yaml, -resource.yaml will remain the same.
 
-3) Run the below command -
+3) Run the below command: 
+
    az arcappliance validate scvmm --configfile .\testvmmrb-appliance.yaml
 
-4) Once prompted for credentials please use the username in the format (domain\username) and check if the above error is fixed or not.
-5) If not solved and the used account was a domain admin please add the the account expliciltiy as part of vmm server administrator profile and retry the command in step 3 above.
-   VMM Console -> Setting -> User Role -> Administrator Profile -> add the account directly in the administrator profile
+4) Once prompted for credentials, use the username in the format (domain\username) and check if the above error is fixed.
+   
+5) If still not solved and the used account was a domain admin, add the the account explicitly as part of VMM server administrator profile and retry the command in Step 3 above. VMM Console -> Setting -> User Role -> Administrator Profile -> add the account directly in the administrator profile
 
-6) If the account used was not domain admin and the same is added present as part of VMM Server administrator profile and still the error is coming please ensure the domain name specified is the netbios name.
+6) If the account used was not a domain admin and the same is added as part of VMM Server administrator profile, ensure the domain name specified is the NetBIOS name.
 
     For e.g 
 
