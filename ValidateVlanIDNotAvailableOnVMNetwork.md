@@ -48,14 +48,11 @@ iv) Go to ***Host Properties -> Hardware -> Network adapters -> Network Adapter 
 
 Once you are good with the above validation, you can run the below command from the workstation machine to check if the VLAN ID error is still being encountered.
 
-1) Open an administrator PowerShell prompt in the same machine from where the ARB deployment script was executed.
-2) Browse to the same folder from where the script was executed as it will have three yaml which we can use for quick validation for this error.
-   The three files present in the above path will be named as (say if the RB name was testvmmrb in the onboarding script downloaded from azure portal) -
-   testvmmrb-appliance.yaml , testvmmrb-infra.yaml, testvmmrb-resource.yaml 
-   
-   Please note the filename will change based on the RB name but the extensions -appliance.yaml, -infra.yaml, -resource.yaml will be there.
+1) Open an administrator PowerShell prompt in the same machine from where the ARB VM deployment script was executed.
+2) Browse to the same folder from where the onboarding script was executed as it will have three .yaml files which help with quick validations. The three .yaml files present in the path will be named as (say if the ARB name was testvmmrb in the onboarding script downloaded from Azure portal) -
+   testvmmrb-appliance.yaml, testvmmrb-infra.yaml, testvmmrb-resource.yaml. Note the filename will change based on the ARB name but the extensions -appliance.yaml, -infra.yaml, -resource.yaml will remain the same.
 
-3) Run the below command -
+3) Run the below command:
    az arcappliance validate scvmm --configfile .\testvmmrb-appliance.yaml
 
 If VMM Logical Switch is not used from VMM for VM network management and is being done through standard switch, you can convert the Standard Switch to VMM Logical switch or try creating a new Logical Switch. Please follow the below link which captures details on how to create a VMM logical switch or covert a standard switch to a logical switch.
