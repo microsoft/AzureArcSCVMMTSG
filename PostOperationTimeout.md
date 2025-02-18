@@ -8,7 +8,7 @@
 
 During the Azure Arc resource bridge deployment (ARB) on a SCVMM managed datacenter, a VM is created which serves as the ARB. This VM is assigned an IP from the VM Network and IP ranges/IP Pool which was input during onboarding script execution. This error mainly suggest that from the workstation machine from which the onboarding script is executed, the ARB VM IP is not reachable/pingable. This IP should be reachable as during the onboarding process we do FTP to download a test file within the ARB VM.
 
-This reachability error can be encountered because of multiple reasons. The debugging steps included here are -
+This reachability error can be encountered because of multiple reasons. Given below are some of the reasons and the recommended steps to confirm the same:
 
 1) Ensure from VMM console that the ARB VM is deployed properly and IPs are assigned to the ARB VM from the same VM network and IP range/IP Pool which was selected/provided while executing the onboarding script. ARB VM can be identified by an unusually long name with the words "control plane" in the VM name and "Arc Appliance VM" in the VM description.
 2) Try running - ping <ARB VM IP> from workstation machine.
