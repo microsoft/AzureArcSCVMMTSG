@@ -10,14 +10,12 @@
 
 **Explanation**
 
-- The control plane IP used during the Day 0 ARB deployment is within the IP pool range. The IP pool for ARB deployment is defined by a start and end IP range. The control plane IP should not fall within this range. The pre-requisite for ARB deployment specifies that the control plane IP must be in the same subnet as the IP pool but should not be part of the IP pool range. 
+Given below are some of the reasons for the above errors and the recommended steps to resolve the same:
 
-- The gateway IP used for the Day 0 ARB deployment overlaps with the IP pool range. The prerequisite for ARB deployment states that the gateway IP should not be within the start and end IP range of the IP pool.
+- The control plane IP used during the ARB deployment is within the IP pool range. The IP pool for ARB deployment is defined by a start and end IP range. The control plane IP should not fall within this range. The pre-requisite for ARB deployment specifies that the control plane IP must be in the same subnet as the IP pool but should not be part of the IP pool range. 
 
-If the customer upgrade fails due to any of the above errors, the only recovery option is to perform Disaster Recovery (DR) process. Disaster Recovery (DR) involves deleting the existing ARB resource, recreating a new ARB with the same configuration, and remapping the SCVMM resources.
+- The gateway IP used during the ARB deployment is within the IP pool range. The prerequisite for ARB deployment states that the gateway IP should not be within the start and end IP range of the IP pool.
 
-The following document provides a detailed guide on performing a Disaster Recovery (DR).
+If the upgrade fails due to any of the above errors, the only recovery option is to perform a fresh onboarding using a Disaster Recovery (DR) approach. This involves deleting the existing ARB Azure resource, recreating a new ARB with the same configuration, and re-mapping the SCVMM resources.
 
-https://learn.microsoft.com/en-us/azure/azure-arc/system-center-virtual-machine-manager/disaster-recovery
-
-Disaster recovery is essentialy deletion of older ARB resource and recreation of the a new ARB with the same configuration and remapping of the SCVMM resources.
+The following document provides a detailed guide on performing a fresh onboarding using a Disaster Recovery (DR): https://learn.microsoft.com/en-us/azure/azure-arc/system-center-virtual-machine-manager/disaster-recovery
