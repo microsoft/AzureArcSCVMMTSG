@@ -27,10 +27,10 @@ Once you are good with the above validation, you can run the below command from 
    
 5) If still not solved and the used account was a domain admin, add the the account explicitly as part of VMM server administrator profile and retry the command in Step 3 above. VMM Console -> Setting -> User Role -> Administrator Profile -> add the account directly in the administrator profile
 
-6) If the account used was not a domain admin and the same is added as part of VMM Server administrator profile, ensure the domain name specified is the NetBIOS name.
+6) If the account used was not a domain admin and it is added as part of VMM Server administrator profile directly, ensure the domain name specified is the NetBIOS name.
 
     For e.g 
 
-    In VMM Administrator profile if we have add abcdef\testuser1. While RB creation we should use the same abcdef\testuser1 and not something like abc.def\testuser1. (where abc.def can still be a valid domain name and which can be used for abcdef)
+    In VMM Administrator profile if you have added abcdef\testuser1, while ARB onboarding script execution, you should use the same abcdef\testuser1 and not anything different like abc.def\testuser1. (abc.def can still be a valid domain name and which can be used for abcdef)
 
-7) Once this works please re-run the appliance onbaording script with the same username and fqdn which worked above.
+7) Once the debugging is complete, re-run the ARB onboarding script with the same username and FQDN with which the debugging was performed.
