@@ -13,7 +13,7 @@ This error can happen due to multiple reasons. Given below are some of the reaso
 1) Check if the Gateway and DNS are properly configured with the ARB VM. To bring up the Kubernetes control plane, we create a Remote PowerShell session from one of the pods running inside the ARB VM to the VMM Server.
    - To debug this further, you can create one test Windows/Linux VM using the same IP Pool or IP range and VLAN ID with the same DNS and gateway which was used for ARB VM creation. The advantage here is that we can log in to the test VM and debug the configuration, but we can't log in to the ARB VM to debug this further. Once you log in into the test VM, you can try creating a remote PowerShell session with the VMM Server to check if that is working fine. Check if the IP is assigned in the same subnet as the ARB VM and DNS/VLAN ID and Gateway are also the same. Below is the command which you can run from within the test VM -
 
-   **New-PSSession -ComputerName <fqdn/IP> -Authentication Negotiate -Credential 'domain\username'**
+          **New-PSSession -ComputerName <fqdn/IP> -Authentication Negotiate -Credential 'domain\username'** 
 
 2) To rule out if this is not a DNS issue, instead of trying with FQDN for appliance deployment, please pass the role name IP or node IP in case of standalone deployment during appliance deployment. 
 
