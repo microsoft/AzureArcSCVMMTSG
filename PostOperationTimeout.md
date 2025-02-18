@@ -10,16 +10,14 @@ During the Azure Arc resource bridge deployment (ARB) on a SCVMM managed datacen
 
 This reachability error can be encountered because of multiple reasons. The debugging steps included here are -
 
-1) Ensure from VMM Server that the appliance VM is deployed properly and IP's are assigned to the VM from the same vmnetwork and IP ranged/IP Pool which was selected/provided during the script execution creation config phase.
-2) Try running - ping <appliance VM IP> from workstation machine.
-3) If the ping is not working use VMM console to view Hardware properties of the appliance VM.
+1) Ensure from VMM console that the ARB VM is deployed properly and IPs are assigned to the ARB VM from the same VM network and IP range/IP Pool which was selected/provided while executing the onboarding script. ARB VM can be identified by an unusually long name with the words "control plane" in the VM name and "Arc Appliance VM" in the VM description.
+2) Try running - ping <ARB VM IP> from workstation machine.
+3) If the ping is not working, use VMM console to view hardware properties of the ARB VM.
    
-   VMM Console -> VM and Services -> All Hosts -> Look for appliance VM -> Properties -> Hardware Configuration -> Network Adapter
+   VMM Console -> VM and Services -> All Hosts -> Look for ARB VM -> Properties -> Hardware Configuration -> Network Adapter
    
-   Validate if the VLAN ID is configured properly or not.
-   Incase if the same is not configured properly please change it manually to the valid VLAN ID and retry if the ping is working or not.
+   Validate if the VLAN ID is configured properly or not. In case if the same is not configured properly, please change it manually to the valid VLAN ID and try pinging the ARB VM IP again.
 
-   Considering after changing the VLAN ID if the ping is working the workaround to solve this will be to reconfigure the vmm networking such the uplink port profile associated with the switch is only having one Logical Network Definition such the appliance VM created will always be assigned a correct VLAN ID. Also please file a support case so that dev team can work out to improve the experience in subsequent release.
+   After changing the VLAN ID if the ARB is pingable, consider reconfiguring the VMM networking such that the uplink port profile associated with the switch is only having one Logical Network Definition. This will ensure that the ARB VM created will always be assigned a correct VLAN ID. We request you to file a support case or reach out to us through arc-vmm-feedback@microsoft.com to share your feedback on this to allow us to continually improve the product.
 
-5) Consider if the ping to appliance VM IP was already working but still the above timeout error came please work with your network team to check if port 22 is blocked or not.
-   Another quick test to check this will be to create a test linux VM using the same vm Network and try doing ssh to the test VM IP from the workstation machine. This will help in identifying more on the blocked port issue.
+4) If the ARB VM is pingable, and you still encountered the above timeout error came, work with your network team to check if port 22 is unblocked. Another quick test to root-cause this issue is to create a test Linux VM using the same VM Network, and doing a SSH to the test VM IP from the workstation machine. This will help in identifying the root cause for the blocked port issue.
