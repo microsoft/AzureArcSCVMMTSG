@@ -6,10 +6,9 @@ The specified VLAN Id _X_ is not available on VM Network _******_
 
 **Explanation**
 
-During Azure Resource Bridge Deployment for SCVMM there are some validations done before the actual appliance VM deployment.
-Once such validate is to verify if the network configuration used for appliance deployment is valid or not. Once the appliance VM is created it will be assigned an IP from the StartIP and EndIP range which is prompted by CLI. If the newtork configuration specified is not correct the IP assigned from this range on appliance VM will not be reachable from workstation machine and deployment will fail. 
+During Azure Arc resource bridge (ARB) deployment on a SCVMM managed datacenter, there are a few validations done before the ARB VM deployment. Once such validation is for the network configuration used during ARB deployment script execution. Once the ARB VM is created, it will be assigned an IP from the StartIP and EndIP range which is prompted by CLI during the onboarding script execution. If the network configuration specified is not correct, the IP assigned from this range on ARB VM will not be reachable from workstation machine and the ARB deployment will fail. 
 
-Below is how the user experience looks like once the azure resource bridge deployment is triggered from workstation machine and if there is no VMM IPPool configured as part of VMM Infra.
+Below is how the user experience looks like once the ARB deployment is triggered from workstation machine and if there is no VMM IPPool configured as part of VMM Infrastructure.
 
 ![alt text](VlanIDCLIFlow.png)
 
