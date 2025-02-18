@@ -55,8 +55,4 @@ Once you are good with the above validation, you can run the below command from 
 3) Run the below command:
    az arcappliance validate scvmm --configfile .\testvmmrb-appliance.yaml
 
-If VMM Logical Switch is not used from VMM for VM network management and is being done through standard switch, you can convert the Standard Switch to VMM Logical switch or try creating a new Logical Switch. Please follow the below link which captures details on how to create a VMM logical switch or covert a standard switch to a logical switch.
-
-[https://learn.microsoft.com/en-us/system-center/vmm/network-switch?view=sc-vmm-2025](https://learn.microsoft.com/en-us/system-center/vmm/network-switch?view=sc-vmm-2025)
-
-
+If VMM Logical Switch is not used from VMM for VM network management and is being done through Standard Switch, you can convert the Standard Switch to VMM Logical Switch or try creating a new Logical Switch. Follow this [article](https://learn.microsoft.com/en-us/system-center/vmm/network-switch?view=sc-vmm-2025) which has details on how to create a VMM logical switch or convert a standard switch to a logical switch.
