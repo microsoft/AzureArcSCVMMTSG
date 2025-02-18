@@ -8,7 +8,7 @@
 
 During the Azure Arc resource bridge deployment (ARB) on a SCVMM managed datacenter, a VM is created which serves as the ARB. There is a kubernetes cluster which runs inside this ARB VM. This error normally suggest that the kubernetes control plane is not provisioned properly with the Kubernetes Cluster.
 
-This can happen due to multiple reasons. The cause and debugging steps included here are -
+This error can happen due to multiple reasons. The cause and debugging steps included here are -
 
 1) Please check if Gateway and DNS are properly configured with the appliance VM. To bring up the Kubernetes control plane, we create a Remote PowerShell session from one of the pods running inside the appliance VM to the VMM Server.
    - To debug this further, we can create one test Windows/Linux VM using the same IP Pool or IP range and VLAN ID with the same DNS and gateway which was used for appliance VM creation. The advantage here is that we can log in to the test VM and debug the configuration, but we can't log in to the appliance VM to debug this further. Once we log in into the test VM, we can try creating a remote PowerShell session with the VMM Server to check if that is working fine or not. Please double-check if the IP is assigned in the same subnet as the appliance VM and DNS/VLAN ID and gateway are also the same. Below is the command which we can run from within the test VM -
