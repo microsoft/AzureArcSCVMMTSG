@@ -15,9 +15,7 @@ Once you are good with the above validation, you can run the below command from 
 
 1) Open an administrator PowerShell prompt in the same machine from where the ARB VM deployment script was executed.
 2) Browse to the same folder from where the onboarding script was executed as it will have three .yaml files which help with quick validations. The three .yaml files present in the path will be named as (say if the ARB name was testvmmrb in the onboarding script downloaded from Azure portal) -
-   testvmmrb-appliance.yaml , testvmmrb-infra.yaml, testvmmrb-resource.yaml 
-   
-   Note the filename will change based on the ARB name but the extensions -appliance.yaml, -infra.yaml, -resource.yaml will remain the same.
+   testvmmrb-appliance.yaml, testvmmrb-infra.yaml, testvmmrb-resource.yaml. Note the filename will change based on the ARB name but the extensions -appliance.yaml, -infra.yaml, -resource.yaml will remain the same.
 
 3) Run the below command: 
 
@@ -29,8 +27,6 @@ Once you are good with the above validation, you can run the below command from 
 
 6) If the account used was not a domain admin and it is added as part of VMM Server administrator profile directly, ensure the domain name specified is the NetBIOS name.
 
-    For e.g 
-
-    In VMM Administrator profile if you have added abcdef\testuser1, while ARB onboarding script execution, you should use the same abcdef\testuser1 and not anything different like abc.def\testuser1. (abc.def can still be a valid domain name and which can be used for abcdef)
+    For e.g., In VMM Administrator profile, if you have added abcdef\testuser1, while ARB onboarding script execution, you should use the same abcdef\testuser1 and not anything different like abc.def\testuser1. (abc.def can still be a valid domain name and which can be used for abcdef)
 
 7) Once the debugging is complete, re-run the ARB onboarding script with the same username and FQDN with which the debugging was performed.
