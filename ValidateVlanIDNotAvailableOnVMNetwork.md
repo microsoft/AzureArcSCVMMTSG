@@ -26,19 +26,9 @@ ii) Identiy the Logical Network associated with the VM Network which was selecte
 
 iii) Check the properties of Host (within the HG or associated with Cloud which was selected for ARB deployment) and identify which Logical switch is associated with the same. ***Host Properties -> Virtual Switches***
 
-iv) ***Open Fabric -> Logical Switches -> Logical Switch property (Name identified from previous step) -> Uplinks (port profile name)***. This will have a few Logical Network Definitions (Network sites) associated with Logical Network and marked as enabled.
+iv) ***Open Fabric -> Logical Switches -> Logical Switch property (Name identified from previous step) -> Uplinks (port profile name)***. This will have a few Logical Network Definitions (Network sites) associated with Logical Network and marked as enabled. Match and identiy the Logical Network Definitions (Network Site) associated with the Logical Network (as identified in step (ii) above)
 
-v) Match and identiy the Logical Network Definitions (Network Site) associated with the Logical Network (as identified in step (ii) above)
-
-vi) ***Open VMM Console -> Fabric ->  Logical Networks -> Open Logical Network (identified in Step (ii) above) -> Network Site***
-
-    As part of this there can be more than one Network site associated with the Logical Network. Each will have a VLAN ID associated with the same. If there is no vlan ID present it is assumed that vlan ID will be 0 which means vlan is disabled.
-    
-    Please consider updating the Network site in above step with correct vlan which is being planned to be used and use the same during ARB deployment.
-
-    Incase if there is some issues/open points due to which any existing Network Site is not updated with the expected VLAN we can create a new network site and fill the vlan and subnets.
-    
-    As part of this flow only if we click on ADD -> Network site,  it will open text boxes to provide vlan ID and subnet. Please create the same and save the ocnfiguration.
+v) ***Open VMM Console -> Fabric ->  Logical Networks -> Open Logical Network (identified in Step (ii) above) -> Network Site***. There can be more than one Network site associated with the Logical Network. Each will have a VLAN ID associated with the same. If there is no VLAN ID present, it is assumed that VLAN ID will be 0 which means VLAN is disabled. Consider updating the Network site in the above step with the correct VLAN ID which is being planned to be used during ARB deployment and use the same during ARB deployment. If there are some issues/open points due to which any existing Network Site is not updated with the expected VLAN ID, you can create a new network site and fill the VLAN ID and subnets. As part of this flow, only if you click on Add -> Network site,  it will open text boxes to provide vlan ID and subnet. Please create the same and save the ocnfiguration.
 
     Once the Network site is created we need to go an update the Uplink port profile so that it allows us to use this network site for ARB deployment.
 
