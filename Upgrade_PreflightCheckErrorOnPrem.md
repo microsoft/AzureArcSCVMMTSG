@@ -18,4 +18,4 @@ Given below are some of the reasons for the above errors and the recommended ste
 
 If the upgrade fails due to any of the above errors, the only recovery option is to perform a fresh onboarding using a Disaster Recovery (DR) approach. This involves deleting the existing ARB Azure resource, recreating a new ARB with the same configuration, and re-mapping the SCVMM resources.
 
-The following document provides a detailed guide on performing a fresh onboarding using a Disaster Recovery (DR): https://learn.microsoft.com/en-us/azure/azure-arc/system-center-virtual-machine-manager/disaster-recovery
+This [document](https://learn.microsoft.com/en-us/azure/azure-arc/system-center-virtual-machine-manager/disaster-recovery) provides a detailed guide on performing a fresh onboarding using a Disaster Recovery (DR).
