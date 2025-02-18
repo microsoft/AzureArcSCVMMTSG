@@ -15,6 +15,9 @@ Access denied error can be encountered because of multiple reasons. Given below 
    - Search for lusrmgr.msc
    - Go to Group->Administrators and check if the account used during the execution of the ARB deployment script is added here
    - Open a PowerShell admininstrator prompt from the workstation machine and run the below command
+  
+          **New-PSSession -ComputerName <fqdn/IP> -Authentication Negotiate -Credential 'domain\username'** 
+
 
      **New-PSSession -ComputerName <fqdn/IP> -Authentication Negotiate -Credential 'domain\username'**
 
