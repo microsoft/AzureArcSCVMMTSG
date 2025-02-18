@@ -2,7 +2,7 @@
 
 **Description**
   
-    { _errorCode_: _InvalidEntityError_, _errorResponse_: _{\n\_message\_: \_The specified VLAN Id _X_ is not available on VM Network _******_\_\n}_, _errorMetadata_: { _errorCategory_: __ } }
+The specified VLAN Id _X_ is not available on VM Network _******_
 
 **Explanation**
 
