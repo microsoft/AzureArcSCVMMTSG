@@ -15,12 +15,11 @@ This error can happen due to multiple reasons. Given below are some of the reaso
 
           **New-PSSession -ComputerName <fqdn/IP> -Authentication Negotiate -Credential 'domain\username'** 
 
-2) To rule out if this is not a DNS issue, instead of trying with FQDN for appliance deployment, please pass the role name IP or node IP in case of standalone deployment during appliance deployment. 
+2) To rule out a DNS issue causing this error, instead of entering the FQDN during the onboarding script execution, input the role name IP or node IP in case of standalone deployment. 
 
-3) Please ensure the WinRM ports are allowed for all the IPs which are specified in the range set as part of the IP pool used for appliance VM deployment.
+3) Ensure the WinRM ports are allowed for all the IPs which are specified in the range set as part of the IP pool used for ARB VM deployment.
 
    - VMM IP Pool: If your SCVMM server is behind a firewall, all the IPs in this IP Pool and the Control Plane IP should be allowed to communicate through WinRM ports. The default WinRM ports are 5985 and 5986.
    - Custom IP range: Ensure that your VM network has three continuous free IP addresses. If your SCVMM server is behind a firewall, all the IPs in this IP range and the Control Plane IP should be allowed to communicate through WinRM ports. The default WinRM ports are 5985 and 5986. 
 
-   
-   To debug this further, please capture Wireshark logs and check if there are any TCP handshake issues seen from the appliance VM IP to the VMM Server, as that will help to identify if there is a firewall rule blocking the communication between the appliance VM and the VMM Server.
+If the above steps are not helpful, to debug this issue further, capture Wireshark logs and check if there are any TCP handshake issues seen from the ARB VM IP to the VMM Server. That will help to identify if there is a firewall rule blocking the communication between the ARB VM and the VMM Server.
