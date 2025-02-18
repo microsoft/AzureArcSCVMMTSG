@@ -41,17 +41,14 @@ ii) Identiy the Logical Network associated with the VM Network which was selecte
 
 iii) Check the properties of Host (within the HG or associated with Cloud which was selected during ARB deployment) to identify the Standard Switch associated with the logical network LN1. Note down its "Network Adapter". ***Host Properties -> Virtual Switches***
       
-iv) Go to ***Host Properties -> Hardware -> Network adapters -> Network Adapter identified in step (iii) -> Logical Network connectivity.***. Check for "Checked" VLANID-subnet pairs for the logical network LN1 and take note of the appropriate one.
+iv) Go to ***Host Properties -> Hardware -> Network adapters -> Network Adapter identified in step (iii) -> Logical Network connectivity.*** Check for "Checked" VLANID-subnet pairs for the logical network LN1 and take note of the appropriate one.
   
-    Case 1 - If no VLANID-Subnet pairs are "checked", check the once you want to use.
-    Case 2 - If no VLANID-Subnet pairs are present for the logical network LN1, first go to
-      **Fabric -> Networking -> Logical Networks -> Logical Network LN1 -> Network Site** 
-    and create one. These should then start reflecting back in the Host properties and can be used.
-   
+  Case 1 - If no VLANID-Subnet pairs are "checked", check the once you want to use.
+  Case 2 - If no VLANID-Subnet pairs are present for the logical network LN1, go to **Fabric -> Networking -> Logical Networks -> Logical Network LN1 -> Network Site** and create one. This would then start reflecting back in the Host properties and can be used.
 
-Once we are good with the above validation we can run the below command from the workstation machine to check if the above reported error is still being reported or not.
+Once you are good with the above validation, you can run the below command from the workstation machine to check if the VLAN ID error is still being encountered.
 
-1) Open an administrator powershell prompt in the same machine from where the appliance deployment script was executed.
+1) Open an administrator PowerShell prompt in the same machine from where the ARB deployment script was executed.
 2) Browse to the same folder from where the script was executed as it will have three yaml which we can use for quick validation for this error.
    The three files present in the above path will be named as (say if the RB name was testvmmrb in the onboarding script downloaded from azure portal) -
    testvmmrb-appliance.yaml , testvmmrb-infra.yaml, testvmmrb-resource.yaml 
