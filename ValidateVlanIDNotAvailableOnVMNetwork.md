@@ -63,6 +63,6 @@ Once we are good with the above validation we can run the below command from the
 
 If VMM Logical Switch is not used from VMM for VM network management and is being done through standard switch, you can convert the Standard Switch to VMM Logical switch or try creating a new Logical Switch. Please follow the below link which captures details on how to create a VMM logical switch or covert a standard switch to a logical switch.
 
-https://learn.microsoft.com/en-us/system-center/vmm/network-switch?view=sc-vmm-2022
+[https://learn.microsoft.com/en-us/system-center/vmm/network-switch?view=sc-vmm-2022](https://learn.microsoft.com/en-us/system-center/vmm/network-switch?view=sc-vmm-2025)
 
 
