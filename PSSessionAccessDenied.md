@@ -18,9 +18,6 @@ Access denied error can be encountered because of multiple reasons. Given below 
   
           **New-PSSession -ComputerName <fqdn/IP> -Authentication Negotiate -Credential 'domain\username'** 
 
-
-     **New-PSSession -ComputerName <fqdn/IP> -Authentication Negotiate -Credential 'domain\username'**
-
 2) Username or password provided is incorrect. To validate this, open a PowerShell admininstrator prompt from the workstation machine and run the below command
 
      **New-PSSession -ComputerName <fqdn/IP> -Authentication Negotiate -Credential 'domain\username'**
