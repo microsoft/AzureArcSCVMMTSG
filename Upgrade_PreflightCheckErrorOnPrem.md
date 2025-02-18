@@ -2,7 +2,7 @@
 
 **Error message**
 
- During the Azure Arc resource bridge (ARB) upgrade, a series of pre-flight validations take place. Any errors at this stage indicate missing pre-requisites. This document addresses the following two pre-flight validation errors encountered during the ARB upgrade. - 
+ During the Azure Arc resource bridge (ARB) upgrade, a series of pre-flight validations take place. Any errors at this stage indicate missing pre-requisites. This document addresses the following two pre-flight validation errors encountered during the ARB upgrade: 
 
  - Upgrade Operation Failed with error: The specified network settings are incorrect: Control Plane Endpoint IP is invalid: Control Plane Endpoint IP is overlapping with the IP address pool
 
@@ -10,7 +10,7 @@
 
 **Explanation**
 
-- The control plane IP used during the Day 0 ARB deployment is within the IP pool range. The IP pool for deployment is defined by a start and end IP range. For a valid deployment, the control plane IP should not fall within this range. The prerequisite for ARB deployment specifies that the control plane IP must be in the same subnet as the IP pool but should not be part of the IP pool range.
+- The control plane IP used during the Day 0 ARB deployment is within the IP pool range. The IP pool for ARB deployment is defined by a start and end IP range. The control plane IP should not fall within this range. The pre-requisite for ARB deployment specifies that the control plane IP must be in the same subnet as the IP pool but should not be part of the IP pool range. 
 
 - The gateway IP used for the Day 0 ARB deployment overlaps with the IP pool range. The prerequisite for ARB deployment states that the gateway IP should not be within the start and end IP range of the IP pool.
 
