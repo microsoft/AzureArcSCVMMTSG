@@ -6,8 +6,7 @@ Insufficient privileges. The specified username for appliance VM creation is not
 
 **Explanation**
 
-During Appliance Resource Bridge Deployment for SCVMM there is some validations done before the actual appliance VM deployment.
-Once such validate is to verify if the account used to do the deployment is administrator or not. The user account which does the appliance VM deployment needs to be an administrator on the windows server machine on which the VMM Service is running and also an administrator as part of VMM Server user profile. The user while deployment is prompted to provide the user name. Please always specific it in the below format. (domain\username) 
+During the Azure Arc resource bridge deployment (ARB) on a SCVMM managed datacenter, there are a few validations done before the actual ARB VM deployment. Once such validation is to verify if the account used to perform the deployment is an administrator. The user account which does the ARB VM deployment needs to be an administrator on the Windows Server machine on which the VMM Service is running and also an administrator as part of VMM Server user profile. 
 
 Steps to debug the same -
 - Open VMM Console -
