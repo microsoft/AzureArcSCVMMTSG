@@ -8,18 +8,17 @@ The specified VLAN Id _X_ is not available on VM Network _******_
 
 During Azure Arc resource bridge (ARB) deployment on a SCVMM managed datacenter, there are a few validations done before the ARB VM deployment. Once such validation is for the network configuration used during ARB deployment script execution. Once the ARB VM is created, it will be assigned an IP from the StartIP and EndIP range which is prompted by CLI during the onboarding script execution. If the network configuration specified is not correct, the IP assigned from this range on ARB VM will not be reachable from workstation machine and the ARB deployment will fail. 
 
-Below is how the user experience looks like once the ARB deployment is triggered from workstation machine and if there is no VMM IPPool configured as part of VMM Infrastructure.
+Below is how the user experience looks like once the ARB deployment is triggered from workstation machine and if there is no VMM IPPool configured as part of VMM Infrastructure chosen as the deployment target for the ARB during the script execution:
 
 ![alt text](VlanIDCLIFlow.png)
 
 To summarize :
 
-If there are IPPools present as part of VMM Server and associated with the target HostGroups/Clouds it will be used for Azure Resource Bridge deployment and in that flow user will not be prompted to provide any Vlan ID as it is already configured within the Logical Network Defination.
+If there are IPPools present as part of VMM Server and associated with the chosen HostGroup/Cloud, it will be used for ARB deployment and the user will not be prompted to provide any VLAN ID as it is already configured within the Logical Network definition.
 
-If there are no IPPools configured, custom IP pool experience will kick in and prompted to the user (as shown in the above image).
-As part of this experience user is asked to provide VLAN ID and if the specified VLAN is not provided correctly one will endup in getting the above validate error.
+If there are no IPPools associated with the chosen HostGroup/Cloud, custom IP pool input experience will kick in and custom IP inputs will be prompted to the user (as shown in the above image). As part of this experience, the user is asked to provide VLAN ID and if the specified VLAN ID is incorrect, one will end up in getting the above validate error. Below are a few ways to identify the correct VLAN ID:
 
-**How to Get the correct VLAN ID if VMM Logical switch is used.**
+**If VMM Logical switch is used.**
 
 i) Open VMM Console
 
