@@ -2,7 +2,7 @@
 
 **Error message**
 
- During the appliance upgrade, a series of pre-flight validations take place. Any errors at this stage indicate missing prerequisites. This document addresses the following two pre-flight validation errors encountered during the ARB upgrade. - 
+ During the Azure Arc resource bridge (ARB) upgrade, a series of pre-flight validations take place. Any errors at this stage indicate missing pre-requisites. This document addresses the following two pre-flight validation errors encountered during the ARB upgrade. - 
 
  - Upgrade Operation Failed with error: The specified network settings are incorrect: Control Plane Endpoint IP is invalid: Control Plane Endpoint IP is overlapping with the IP address pool
 
