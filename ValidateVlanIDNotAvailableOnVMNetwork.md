@@ -22,18 +22,15 @@ If there are no IPPools associated with the chosen HostGroup/Cloud, custom IP po
 
 i) Open VMM Console
 
-ii) First we need to identiy the Logical Network associated with the VM Network which was selected for ARB deployment
-    As we already know the VM Network name we can ***open VMM Console -> VM Network -> Double Click and open the VM Network which is used for deployment***. It will be associated with a logical network, please take a note of the same.
+ii) Identiy the Logical Network associated with the VM Network which was selected during ARB deployment. ***Open VMM Console -> VM Network -> Double Click and open the VM Network which was used during deployment***. It will be associated with a logical network. Take a note of the same.
 
-iii) Check the properties of Host (within the HG or associated with Cloud) which is selected for ARB deployment and identify which  Logical switch is associated with the same.
-      ***Host Properties -> Virtual Switches***
+iii) Check the properties of Host (within the HG or associated with Cloud which was selected for ARB deployment) and identify which Logical switch is associated with the same. ***Host Properties -> Virtual Switches***
 
-iv) ***Open Fabric -> Logical Switches -> Logical Switch property (Name identified from previous step) -> Uplinks (port profile name)***
-This will have few set of Logical Network Definations (network site) associated with Logical Network and marked as enabled.
+iv) ***Open Fabric -> Logical Switches -> Logical Switch property (Name identified from previous step) -> Uplinks (port profile name)***. This will have a few Logical Network Definitions (Network sites) associated with Logical Network and marked as enabled.
 
-v) Match and identiy the Logical Network Definations (network site) associated with the Logical Network (as identified in step ii above)
+v) Match and identiy the Logical Network Definitions (Network Site) associated with the Logical Network (as identified in step (ii) above)
 
-vi) ***Open VMM Console -> Fabric ->  Logical Networks -> Open Logical Network (identified in Step ii above) -> Network Site***
+vi) ***Open VMM Console -> Fabric ->  Logical Networks -> Open Logical Network (identified in Step (ii) above) -> Network Site***
 
     As part of this there can be more than one Network site associated with the Logical Network. Each will have a VLAN ID associated with the same. If there is no vlan ID present it is assumed that vlan ID will be 0 which means vlan is disabled.
     
