@@ -24,7 +24,7 @@ If the above error message is encountered, you can validate if the libary share 
 
 - If the Import-SCLibraryPhysicalResource is stuck for a long time or if it fails, debug the error. Once you fix the same, execute the ARB onboarding script again. 
 
-- Few other known causes of the Import command stuck could be BitsTCPPort conflict issue, or certicate issue between VMM Server and library share.
+- Few other known causes of the Import command stuck could be BitsTCPPort conflict issue, or certificate issue between VMM Server and library share.
 
 - Once this works, re-run the appliance onboarding script from the workstation machine and select the library share which was fixed by the above debugging.
 
