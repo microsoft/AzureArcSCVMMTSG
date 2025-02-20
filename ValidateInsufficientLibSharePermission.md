@@ -15,7 +15,7 @@ If the above error message is encountered, you can validate if the libary share 
 - Create a dummy PowerShell file (for e.g test.ps1) inside the path
 - Run the below cmdlets now:
    - $server = Get-SCVMMServer -ComputerName localhost
-   - Import-SCLibraryPhysicalResource -SourcePath 'SystemDrvie\ProgramData\powershellfilename' -SharePath <LibrarySharePath> -VMMServer $server -OverwriteExistingFiles
+   - Import-SCLibraryPhysicalResource -SourcePath 'SystemDrive\ProgramData\powershellfilename' -SharePath <LibrarySharePath> -VMMServer $server -OverwriteExistingFiles
      
      for e.g if LibrarySharePath was \\testserver\testshare and filename was test1.ps1 then the above command will look like
      Import-SCLibraryPhysicalResource -SourcePath 'C:\ProgramData\test1.ps1' -SharePath '\\testserver\testshare' -VMMServer $server -OverwriteExistingFiles
