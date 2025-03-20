@@ -9,6 +9,10 @@ VMM Server doesn't have write permission into the specified library share : \\\\
 
 During Azure Arc resource bridge (ARB) deployment on a SCVMM managed datacenter, a few validations are performed before the ARB VM deployment. One such validation is to validate if the the library server specified has write permissions. VMM Server can only create the ARB VM if the required VHDX/VHD file is present in the library share. For ARB VM deployment, a special customized Mariner VHDX is required and the same is downloaded during the onboarding script execution and copied to the VMM library share. Hence, the onboarding script prompts to select a library share during the onboarding script execution and on selection, validation check for the write permission on the chosen library share happens. In addition to write permission, a minimum of 10GB of free space is required in the selected library share.
 
+> **Note:** A Library Share containing whitespace in its path (e.g., \\LibraryServer\Library Share) is not supported. 
+Importing resources from such a Library Share is not a supported scenario in the VMM console or when using the Import-SCLibraryPhysicalResource command. Check VMM jobs for the failure. <br>
+To resolve the issue, use a Library Share without any whitespace in its path and re-run the ARB onboarding script.
+
 If the above error message is encountered, you can validate if the libary share has the write permissions by following the below steps:
 - RDP to the VMM server machine.
 - Open a PowerShell admin prompt and browse to SystemDrive\ProgramData folder (for e.g C:\ProgramData)
@@ -28,4 +32,4 @@ If the above error message is encountered, you can validate if the libary share 
 
 - Once this works, re-run the appliance onboarding script from the workstation machine and select the library share which was fixed by the above debugging.
 
-- You can also file a support ticket to fix the library issue by working with Microsoft engineers. 
+- You can also file a support ticket to fix the library issue by working with Microsoft engineers.
