@@ -21,4 +21,4 @@ However, there are scenarios where the -force flag may not resolve the issue, an
 
 <br>
 
-> **Recommendation:**  It is best practice to run the onboarding script from a separate folder, as the generated configuration YAML files are useful for Day-N operations. However, if re-running from the same folder, ensure the -force flag is used to clean up any previous resources before retrying.
+> **Note:**  For a fresh deployment, it is best practice to run the onboarding script from a separate folder, as the generated configuration YAML files are useful for Day-N operations. However, if re-running the onboarding script from the same folder after a failed execution, ensure that the `-force` flag is used to clean up any previous resources before retrying.
