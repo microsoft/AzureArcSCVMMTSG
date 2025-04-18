@@ -28,7 +28,7 @@ Steps:
 
 ### Step 2: Identify and Export Duplicate VM IDs
 
-If manually removing VMs via the portal is cumbersome (especially with many resources), you can automate this with Azure CLI.
+DupliIf manually removing VMs via the portal is cumbersome (especially with many resources), you can automate this with Azure CLI.
 
 **Bash:**
 ```bash
@@ -49,14 +49,14 @@ az scvmm vmmserver inventory-item list `
 ```
 
 This command exports all VM IDs under the specified VMMServer to `vm_ids.txt`.  
-Review the file and **remove any IDs** that should not be deleted.
+Review the file and **remove any IDs** that should not be deleted. **VMs which don't have duplicates need not be in this list**
 
 ---
 
 ### Step 3: Delete duplicate VM entries from Arc-enabled SCVMM Inventory
 
 > [!NOTE]
-> 💡 This step will **not delete the VMs from your VMMServer infrastructure**. It will **just delete the azure representations of the respective VMs.**
+> 💡 This step will **not delete the VMs from your VMMServer infrastructure in your on-premises datacenter**. It will **just delete the Azure (ARM) representations of the respective VMs.**
 
 **Bash:**
 ```bash
@@ -86,14 +86,14 @@ foreach ($id in $ids) {
 
 ---
 
-### Step 4 (Optional): Consolidate Resources into a Single Resource Group
+### Step 4 (Optional): Consolidate machines into a single Resource Group
 
 You can perform this step in the following cases:
 
-1. Your Arc-for-Servers resources are in a different resource group than your VMMServer and you prefer to consolidate them. If you prefer to organize your resources into multiple subscriptions or resource groups, you can skip this step. 
-2. The **‘Link to VMMServer’** option is missing in the portal. This is a known portal issue and typically occurs when the Arc for Servers resources are not in the same subscription and resource group as the VMMServer. The portal fix is in progress.
+1. Your Arc enabled servers resources are in a different resource group than your SCVMM server and you prefer to consolidate them. If you prefer to organize your resources into multiple subscriptions or resource groups, you can skip this step. 
+2. The **‘Link to SCVMM’** option is missing in the portal. This is a known portal issue and typically occurs when the Arc enabled servers resources are not in the same subscription and resource group as the SCVMM server. The portal fix for this issue is in progress.
 
-**Get the list of Arc-for-Servers resources:**
+**Get the list of Arc enabled servers resources:**
 ```bash
 az resource list --resource-group 'contoso-rg' --query "[?type=='Microsoft.HybridCompute/machines'].id" --output tsv > arc_servers.txt
 ```
@@ -111,7 +111,7 @@ $ids = Get-Content arc_servers.txt
 az resource move --destination-group 'contoso-rg' --ids $ids
 ```
 
-> After moving the resources, the ‘Link to VMMServer’ should appear in the portal.
+> After moving the resources, the ‘Link to SCVMM’ should appear in the portal under 'Virtual hardware management' column against each VM which already has the Arc agent installed.
 > > If the number of resources is large, you can use the CLI to link the resources to SCVMM by using the next step.
 
 ### Step 5: Use Azure CLI command to Link Machines (Preview Extension)
@@ -132,5 +132,5 @@ az scvmm vm create-from-machines \
   --scvmm-id /subscriptions/01234567-0123-0123-0123-0123456789ab/resourceGroups/contoso-rg/providers/Microsoft.ScVmm/vmmServers/contoso-vmmserver
 ```
 
-This will link your Arc for Servers resources to the VMMServer as expected.
+This will link your Arc enabled servers resources to the SCVMM server as expected.
 
