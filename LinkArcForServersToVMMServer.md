@@ -90,8 +90,8 @@ foreach ($id in $ids) {
 
 You can perform this step in the following cases:
 
-1. Your Arc-for-Servers resources are in a different resource group than your VMMServer and you prefer to consolidate them
-2. The **‘Link to VMMServer’** option is missing in the portal. This is a known portal issue and typically occurs when the Arc for Servers resources are not in the same resource group as the VMMServer. The portal fix is in progress.
+1. Your Arc-for-Servers resources are in a different resource group than your VMMServer and you prefer to consolidate them. If you prefer to organize your resources into multiple subscriptions or resource groups, you can skip this step. 
+2. The **‘Link to VMMServer’** option is missing in the portal. This is a known portal issue and typically occurs when the Arc for Servers resources are not in the same subscription and resource group as the VMMServer. The portal fix is in progress.
 
 **Get the list of Arc-for-Servers resources:**
 ```bash
@@ -114,9 +114,9 @@ az resource move --destination-group 'contoso-rg' --ids $ids
 > After moving the resources, the ‘Link to VMMServer’ should appear in the portal.
 > > If the number of resources is large, you can use the CLI to link the resources to SCVMM by using the next step.
 
-### Step 5: Use CLI to Link Machines (Preview Extension)
+### Step 5: Use Azure CLI command to Link Machines (Preview Extension)
 
-You can use a CLI command available in the **preview** version of the SCVMM extension to manually link machines.
+You can use a Az CLI command available in the **preview** version of the SCVMM extension to manually link machines.
 
 1. Install the preview CLI extension:
 
