@@ -1,12 +1,12 @@
 This troubleshooting guide addresses two scenarios:
 
-Scenario 1) A VM is Azure-enabled through SCVMM Azure VM Inventory but also has the Arc agent installed via one of the Arc-enabled servers methods. This results in two Azure resources for the impacted VMs under Azure Arc -> Machines. Start from Step 1 below to remove the duplicate resources and consolidate them into a single resource with the full capabilities of Azure Arc.
+Scenario 1) A VM is Azure-enabled through SCVMM Azure VM Inventory but also has the Arc agent installed via one of the Arc-enabled servers methods. This results in two Azure resources for each of the impacted VMs under Azure Arc -> Machines tab. Start from Step 1 below to remove the duplicate resources and consolidate them into a single resource with the full capabilities of Azure Arc.
 
 Scenario 2) A VM is not Azure-enabled but has the Arc agent installed via one of the Arc-enabled servers methods. You may encounter one of the two experiences: 
    - **‘Link to SCVMM’** option is missing in the SCVMM VM Inventory view due to a portal issue.
    - **‘Link to SCVMM’** is present, but there are a lot of Arc-for-Servers resources, and an automation would be helpful.
 
-Start from Step 4 below to get the full range of Azure Arc capabilities for your SCVMM VMs.
+Start from Step 4 (optional) or Step 5 below to get the full range of Azure Arc capabilities for your SCVMM VMs.
 
 Steps:
 
