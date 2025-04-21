@@ -89,7 +89,7 @@ foreach ($id in $ids) {
 ### Step 4 (Optional): Consolidate machines into a single Resource Group
 
 > [!NOTE]
-> 💡If you prefer to organize your resources into multiple subscriptions or resource groups, you can skip this step. Not performing this step will not cause any functionality impact.
+> 💡If you prefer to organize your resources into multiple subscriptions or resource groups, you can skip this step. This step is optional and not performing this step will not cause any functionality impact.
 
 You can perform this step in the following cases:
 
