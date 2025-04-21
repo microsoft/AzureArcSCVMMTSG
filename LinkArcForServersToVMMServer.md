@@ -12,7 +12,7 @@ Steps:
 
 1. Retrieve the Resource ID of the VMMServer
 2. Identify and Export Duplicate VM IDs
-3. Delete duplicate VM entries from Arc-enabled SCVMM Inventory
+3. Remove the Azure representation of duplicate VM entries from Arc-enabled SCVMM Inventory
 4. (Optional) Consolidate Resources into a Single Resource Group
 5. Use CLI to Link Machines (Preview Extension)
 
@@ -28,7 +28,7 @@ Steps:
 
 ### Step 2: Identify and Export Duplicate VM IDs
 
-DupliIf manually removing VMs via the portal is cumbersome (especially with many resources), you can automate this with Azure CLI.
+Duplicate VMs refer to the VMs without the Arc agent installed. If manually removing duplicate VMs via the portal is cumbersome (especially with many resources), you can automate this with Azure CLI.
 
 **Bash:**
 ```bash
@@ -53,7 +53,7 @@ Review the file and **remove any IDs** that should not be deleted. **VMs which d
 
 ---
 
-### Step 3: Delete duplicate VM entries from Arc-enabled SCVMM Inventory
+### Step 3: Remove the Azure respresentation of duplicate VM entries from Arc-enabled SCVMM Inventory
 
 > [!NOTE]
 > 💡 This step will **not delete the VMs from your VMMServer infrastructure in your on-premises datacenter**. It will **just delete the Azure (ARM) representations of the respective VMs.**
