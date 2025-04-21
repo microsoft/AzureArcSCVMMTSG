@@ -26,9 +26,9 @@ Steps:
 2. Click **‘JSON View’** on the right-hand side.
 3. Copy the **Resource ID** value.
 
-### Step 2: Identify and Export Duplicate VM IDs
+### Step 2: Identify and export duplicate VM ARM IDs
 
-Duplicate VMs refer to the VMs without the Arc agent installed. If manually removing duplicate VMs via the portal is cumbersome (especially with many resources), you can automate this with Azure CLI.
+Duplicate VM ARM IDs refer to the Azure representation of the VMs for which the Azure resource doesn't recognize the Arc agent being already installed. These are typically found under the VM Inventory view of your SCVMM server. If manually removing duplicate VMs via the portal is cumbersome (especially with many resources), you can automate this with Azure CLI.
 
 **Bash:**
 ```bash
@@ -88,10 +88,13 @@ foreach ($id in $ids) {
 
 ### Step 4 (Optional): Consolidate machines into a single Resource Group
 
+> [!NOTE]
+> 💡If you prefer to organize your resources into multiple subscriptions or resource groups, you can skip this step. Not performing this step will not cause any functionality impact.
+
 You can perform this step in the following cases:
 
-1. Your Arc enabled servers resources are in a different resource group than your SCVMM server and you prefer to consolidate them. If you prefer to organize your resources into multiple subscriptions or resource groups, you can skip this step. 
-2. The **‘Link to SCVMM’** option is missing in the portal. This is a known portal issue and typically occurs when the Arc enabled servers resources are not in the same subscription and resource group as the SCVMM server. The portal fix for this issue is in progress.
+1. Your Arc enabled servers resources are in a different resource group than your SCVMM server and you prefer to consolidate them. 
+2. The **‘Link to SCVMM’** option is missing in the portal. This is a known portal issue and typically occurs when the Arc enabled servers resources are not in the same subscription and resource group as the SCVMM server. The portal fix for this issue is in progress. 
 
 **Get the list of Arc enabled servers resources:**
 ```bash
@@ -116,7 +119,7 @@ az resource move --destination-group 'contoso-rg' --ids $ids
 
 ### Step 5: Use Azure CLI command to Link Machines (Preview Extension)
 
-You can use a Az CLI command available in the **preview** version of the SCVMM extension to manually link machines.
+You can use a Az CLI command available in the **preview** version of the SCVMM extension to manually link machines. The user executing the below CLI commands should have **Azure Arc SCVMM VM Contributor** or **Azure Arc SCVMM VM Administrator** built-in Azure role assigned. Alternatively, the user can have a custom Azure role with the permissions to perform read and write operations in SCVMM VM resources and Hybrid Compute machines. 
 
 1. Install the preview CLI extension:
 
