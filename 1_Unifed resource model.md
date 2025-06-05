@@ -117,9 +117,9 @@ az resource move --destination-group 'contoso-rg' --ids $ids
 > After moving the resources, the ‘Link to SCVMM’ should appear in the portal under 'Virtual hardware management' column against each VM which already has the Arc agent installed.
 > > If the number of resources is large, you can use the CLI to link the resources to SCVMM by using the next step.
 
-### Step 5: Use Azure CLI command to Link Machines (Preview Extension)
+### Step 5: Use Azure CLI command to Link Machines
 
-You can use a Az CLI command available in the **preview** version of the SCVMM extension to manually link machines. The user executing the below CLI commands should have **Azure Arc SCVMM VM Contributor** or **Azure Arc SCVMM VM Administrator** built-in Azure role assigned. Alternatively, the user can have a custom Azure role with the permissions to perform read and write operations in SCVMM VM resources and Hybrid Compute machines. 
+You can use an Azure CLI command available to manually link machines. The user executing the below CLI commands should have **Azure Arc SCVMM VM Contributor** or **Azure Arc SCVMM VM Administrator** built-in Azure roles assigned. Alternatively, the user can have a custom Azure role with the permissions to perform read and write operations in SCVMM VM resources and Hybrid Compute machines. 
 
 1. Install the preview CLI extension:
 
