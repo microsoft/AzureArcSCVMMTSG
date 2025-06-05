@@ -121,10 +121,10 @@ az resource move --destination-group 'contoso-rg' --ids $ids
 
 You can use an Azure CLI command available to manually link machines. The user executing the below CLI commands should have **Azure Arc SCVMM VM Contributor** or **Azure Arc SCVMM VM Administrator** built-in Azure roles assigned. Alternatively, the user can have a custom Azure role with the permissions to perform read and write operations in SCVMM VM resources and Hybrid Compute machines. 
 
-1. Install the preview CLI extension:
+1. Install the latest version of Azure CLI extension. To find your installed version and see if you need to update, run: 
 
 ```sh
-az extension add --yes --upgrade --source https://nascarsayan.blob.core.windows.net/get/scvmm-1.1.3-py2.py3-none-any.whl
+az version
 ```
 
 2. Run the linking command:
