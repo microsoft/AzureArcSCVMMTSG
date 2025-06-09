@@ -130,9 +130,7 @@ az version
 2. Run the linking command:
 
 ```sh
-az scvmm vm create-from-machines \
-  --subscription contoso-sub \
-  --scvmm-id /subscriptions/01234567-0123-0123-0123-0123456789ab/resourceGroups/contoso-rg/providers/Microsoft.ScVmm/vmmServers/contoso-vmmserver
+az scvmm vm create-from-machines --subscription contoso-sub --scvmm-id /subscriptions/01234567-0123-0123-0123-0123456789ab/resourceGroups/contoso-rg/providers/Microsoft.ScVmm/vmmServers/contoso-vmmserver
 ```
 
 This will link your Arc enabled servers resources to the SCVMM server as expected.
